@@ -1,0 +1,23 @@
+import React from 'react';
+import Button, { ButtonSize, ButtonType } from './compontents/Button/button'
+
+function App() {
+  return (
+    <div className="App">
+      <p>size</p>
+      <Button size={ButtonSize.Large}>large</Button>
+      <Button size={ButtonSize.Small}>small</Button>
+      <Button >hello</Button>
+      <p>type</p>
+      <Button btnType='danger'>Danger</Button>
+      <Button btnType='default'>Default</Button>
+      <Button btnType='primary'>Primary</Button>
+      <Button btnType='link' href="http://baidu.com">Link</Button>
+      <p>disabled</p>
+      <Button disabled={true}>disabled</Button>
+      <Button disabled>disabled</Button>
+    </div>
+  );
+}
+
+export default App;
