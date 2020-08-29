@@ -2,7 +2,8 @@ import React, { useContext, useState, FunctionComponentElement } from 'react'
 import classNames from 'classnames'
 import { MenuContext } from './Menu'
 import { MenuItemProps } from './MenuItem'
-
+import Transition from '../Transition/transition'
+import { CSSTransition } from 'react-transition-group'
 export interface SubMenuProps {
   index?: string;
   title: string;
@@ -16,7 +17,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
   const openedSubMenus = context.defaultOpenSubMenus as Array<string>
   // 默认的展开方式，只有纵向才可以默认展开
   const isOpened = (index && context.mode === 'vertical') ? openedSubMenus.includes(index) : false
-  const [menuOpen, setMenuOpen] = useState<Boolean>(isOpened)
+  const [menuOpen, setMenuOpen] = useState(isOpened)
   const ind = context.index.indexOf('-')
   const classes = classNames('menu-item submenu', className, {
     'is-active': context.index.slice(0, ind) === index
@@ -30,7 +31,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
 
   // 横向悬浮
   let timer: any
-  const handleMouse = (e: React.MouseEvent, toggle: Boolean) => {
+  const handleMouse = (e: React.MouseEvent, toggle: boolean) => {
     clearTimeout(timer)
     e.preventDefault()
     timer = setTimeout(() => {
@@ -59,9 +60,15 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
       }
     })
     return (
-      <ul className={subMenuClasses}>
-        {childrenCom}
-      </ul>
+      <Transition
+        in={menuOpen}
+        timeout={300}
+        animation='zoom-in-left'
+      >
+        <ul className={subMenuClasses}>
+          {childrenCom}
+        </ul>
+      </Transition>
     )
   }
   return (

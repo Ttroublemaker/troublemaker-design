@@ -12,6 +12,8 @@ library.add(fas, faCheckSquare, faCoffee)
 function App() {
   return (
     <div className="App">
+      {/* Button测试*/}
+      <p>Button测试</p>
       <p>size</p>
       <Button size='lg'>large</Button>
       <Button size='sm'>small</Button>
@@ -25,8 +27,12 @@ function App() {
       <p>disabled</p>
       <Button disabled={true}>disabled</Button>
       <Button disabled>disabled</Button>
-      <Icon icon='arrow-down' theme='danger' size='10x' />
-      <Menu onSelect={index => console.log(index)} mode='horizontal' defaultOpenSubMenus={['1']}>
+      {/* Icon测试 */}
+      <p>Icon测试</p>
+      <Icon icon='arrow-down' theme='danger' size='2x' />
+      {/* Menu测试 */}
+      <p>Menu测试</p>
+      <Menu onSelect={index => console.log(index)} mode='vertical' defaultOpenSubMenus={['1']}>
         <MenuItem disabled>
           'MenuItem one'
         </MenuItem>
@@ -52,6 +58,7 @@ function App() {
         </MenuItem>
       </Menu>
     </div>
+
   )
 }
 

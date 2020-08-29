@@ -1,24 +1,10 @@
 import React from 'react';
 import classNames from 'classNames'
-import { tuple } from '../../utils/index'
 
-const ButtonTypes = tuple('default', 'primary', 'danger', 'link', 'text');
-export type ButtonType = typeof ButtonTypes[number];
+export type ButtonType = 'default' | 'primary' | 'danger' | 'link' | 'text'
 
-const ButtonSizes = tuple('lg', 'sm');
-export type ButtonSize = typeof ButtonSizes[number];
+export type ButtonSize = 'lg' | 'sm'
 
-// 枚举的弊端是使用组件时无法获取直接使用值的提示,不友好,如 btnType?: ButtonType;
-// export enum ButtonSize {
-//   Large = 'lg',
-//   Small = 'sm',
-// }
-// export enum ButtonType {
-//   Primary = 'primary',
-//   Default = 'default',
-//   Danger = 'danger',
-//   Link = 'link'
-// }
 interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
@@ -37,7 +23,6 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 const Button: React.FC<ButtonProps> = (props) => {
   const { btnType, className, disabled, size, children, href, ...restProps } = props
-  // btn,btn-lg btn-primary
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
