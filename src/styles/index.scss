@@ -1,17 +1,23 @@
 // config
 @import "variables";
 
-// mixin
+//mixin
 @import "mixin";
 
-// Transition
-@import "transition";
+// animation
+@import "animation";
+// button
 
-// Button
-@import "../compontents/Button/style";
+@import "../components/Button/style";
 
-// Icon
-@import "../compontents/Icon/style";
+// menu
+@import "../components/Menu/style";
 
-// Menu
-@import "../compontents/Menu/style";
+// icon
+@import "../components/Icon/style";
+
+// input
+@import "../components/Input/style";
+
+//auto-complete
+@import "../components/AutoComplete/style";

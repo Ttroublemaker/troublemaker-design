@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { MenuContext } from './Menu'
 import { MenuItemProps } from './MenuItem'
 import Transition from '../Transition/transition'
-import { CSSTransition } from 'react-transition-group'
 export interface SubMenuProps {
   index?: string;
   title: string;

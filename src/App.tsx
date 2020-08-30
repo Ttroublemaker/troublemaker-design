@@ -1,13 +1,9 @@
 import React from 'react';
-import Button, { ButtonSize, ButtonType } from './compontents/Button/button'
-import Icon from './compontents/Icon/icon'
-import Menu from './compontents/Menu/Menu'
-import MenuItem from './compontents/Menu/MenuItem'
-import SubMenu from './compontents/Menu/SubMenu'
-// fas 指所有图标
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas, faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
-library.add(fas, faCheckSquare, faCoffee)
+import Button from './components/Button/button'
+import Icon from './components/Icon/icon'
+import Menu from './components/Menu/Menu'
+import MenuItem from './components/Menu/MenuItem'
+import SubMenu from './components/Menu/SubMenu'
 
 function App() {
   return (
