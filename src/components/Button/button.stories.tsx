@@ -28,6 +28,7 @@ const buttonWithType = () => (
     <Button btnType="danger"> danger button </Button>
     <Button btnType="link" href="https://baidu.com"> link button </Button>
     <Button btnType="text"> text button </Button>
+    <Button btnType="default" disabled> text button </Button>
   </>
 )
 storiesOf('Button Component', module)

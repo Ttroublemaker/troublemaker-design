@@ -51,9 +51,21 @@
 }
 
 .btn-text {
-  @include button-style($white, $white, $body-color, $white, $white, $primary);
+  font-weight: $font-weight-normal;
+  color: $btn-link-color;
   box-shadow: none;
   border: none !important;
+  background-color: #fff;
+
+  &:focus,
+  &.focus {
+    outline: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+  }
 }
 
 .btn-link {

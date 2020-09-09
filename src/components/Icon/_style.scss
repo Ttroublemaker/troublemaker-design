@@ -4,3 +4,7 @@ $val in $theme-colors {
     color: $val;
   }
 }
+
+.icon+.icon {
+  margin-left: 10px;
+}
