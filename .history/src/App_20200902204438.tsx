@@ -1,0 +1,35 @@
+import React, { FC, useEffect, useState } from 'react';
+import axios from 'axios'
+import Upload from './components/Upload/upload'
+
+const App: FC = () => {
+  const [title, setTitle] = useState('')
+  const postData = { title: 'test' }
+  useEffect(() => {
+
+  })
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files
+    if (files) {
+      const uploadedFile = files[0]
+      const formData = new FormData()
+      formData.append(uploadedFile.name, uploadedFile)
+      axios.post('https://jsonplaceholder.typicode.com/posts', formData, {
+        headers: {
+          'Content-type': 'multipart/form-data'
+        }
+      }).then(res => {
+        console.log(res)
+      })
+    }
+  }
+  return (
+    <div className="App">
+      <input type="file" name='myFile' onChange={handleFileChange} />
+      <Upload action='https://jsonplaceholder.typicode.com/posts' onChange={} />
+    </div>
+
+  )
+}
+
+export default App
