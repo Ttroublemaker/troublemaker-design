@@ -19,7 +19,6 @@ const ThemeIcon = () => {
       <Icon icon="search" theme="danger" />
       <Icon icon="search" theme="dark" />
       <Icon icon="search" theme="info" />
-      <Icon icon="search" theme="light" />
       <Icon icon="search" theme="primary" />
       <Icon icon="search" theme="secondary" />
       <Icon icon="search" theme="success" />

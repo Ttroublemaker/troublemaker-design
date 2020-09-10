@@ -1,3 +1,4 @@
+// line 类型
 .progress-bar {
   width: 100%;
   box-sizing: border-box;
@@ -32,6 +33,84 @@
   $val in $theme-colors {
     .color-#{$key} {
       background-color: $val;
+    }
+  }
+}
+
+// circle 类型
+.progress-circle-outer {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 2rem;
+  display: inline-block;
+
+  @each $key,
+  $val in $theme-colors {
+    &.color-#{$key} {
+
+      .wrap,
+      .circle,
+      .percent {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+
+
+      .wrap {
+        background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle {
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        // 设置元素的形状。唯一合法的形状值是：rect (top, right, bottom, left)
+        clip: rect(0, 100px, 100px, 50px);
+
+        &.clip-auto {
+          clip: rect(auto, auto, auto, auto); // auto	默认值。不应用任何剪裁。
+        }
+      }
+
+
+      .percent {
+        box-sizing: border-box;
+        top: -1px;
+        left: -1px;
+      }
+
+      .left {
+        border: 10px solid $val;
+        clip: rect(0, 50px, 100px, 0);
+      }
+
+      .right {
+        border: 10px solid $val;
+        clip: rect(0, 100px, 100px, 50px);
+      }
+
+      .wth0 {
+        width: 0;
+      }
+
+      .progress-circle-inner {
+        box-sizing: border-box;
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        border-radius: 50%;
+        color: $val;
+        background: white;
+        z-index: 1;
+      }
     }
   }
 }
