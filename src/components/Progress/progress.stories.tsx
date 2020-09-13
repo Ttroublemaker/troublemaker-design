@@ -10,9 +10,7 @@ const defaultProgress = () => (
     <Progress percent={80} showText={false}></Progress>
     <br />
     <Progress percent={30} type="circle"></Progress>
-    <br />
     <Progress percent={80} type="circle"></Progress>
-    <br />
     <Progress percent={100} type="circle" ></Progress>
   </>
 )
